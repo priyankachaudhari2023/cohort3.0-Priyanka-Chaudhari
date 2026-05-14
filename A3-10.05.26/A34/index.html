@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Squid Game Landing Page</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700;900&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Variables */
+:root {
+    --pink: #e91e63;
+    --dark-purple: #1a0210;
+    --bg-gradient: radial-gradient(circle at top right, #4b0d2d, #1a0210);
+    --glass: rgba(255, 255, 255, 0.05);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background: var(--bg-gradient);
+    color: white;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.main-container {
+    padding: 0 80px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Flex Helpers */
+.flex { display: flex; align-items: center; }
+.flex-between { display: flex; align-items: center; justify-content: space-between; }
+
+/* Navbar */
+.navbar {
+    padding: 30px 0;
+}
+
+.nav-links a {
+    color: #ccc;
+    text-decoration: none;
+    margin: 0 20px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: 0.3s;
+}
+
+.nav-links a.active, .nav-links a:hover {
+    color: white;
+    border-bottom: 2px solid var(--pink);
+    padding-bottom: 5px;
+}
+
+.menu-icon i {
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+/* Hero Section */
+.hero {
+    flex: 1;
+    position: relative;
+}
+
+.large-logo {
+    width: 450px;
+    margin-bottom: 20px;
+    filter: drop-shadow(0 0 10px rgba(233, 30, 99, 0.5));
+}
+
+.meta-info {
+    font-size: 0.9rem;
+    color: #bbb;
+    margin-bottom: 5px;
+    letter-spacing: 0.5px;
+}
+
+.cta-btns {
+    margin-top: 30px;
+    gap: 20px;
+}
+
+.btn {
+    padding: 12px 30px;
+    border-radius: 8px;
+    border: none;
+    font-weight: 700;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: 0.3s;
+}
+
+.btn-filled {
+    background: linear-gradient(to right, #e91e63, #ff5722);
+    color: white;
+}
+
+.btn-outline {
+    background: transparent;
+    color: white;
+    border: 1px solid var(--pink);
+}
+
+.btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(233, 30, 99, 0.3);
+}
+
+/* Hero Image & Side UI */
+.hero-image-wrapper {
+    position: absolute;
+    right: 50px;
+    bottom: 0;
+    width: 45%;
+}
+
+.guard-img {
+    width: 100%;
+    filter: drop-shadow(0 0 50px rgba(233, 30, 99, 0.2));
+}
+
+.side-scroll {
+    position: absolute;
+    left: -40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.side-scroll span {
+    writing-mode: vertical-lr;
+    font-size: 0.8rem;
+    letter-spacing: 5px;
+    color: #666;
+}
+
+.side-scroll .line {
+    width: 2px;
+    height: 50px;
+    background: var(--pink);
+}
+
+.social-icons {
+    position: absolute;
+    right: -40px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.social-icons i {
+    font-size: 1.2rem;
+    color: #888;
+    transition: 0.3s;
+}
+
+.social-icons i:hover { color: var(--pink); }
+
+/* Bottom Featured Cards */
+.bottom-featured {
+    padding-bottom: 40px;
+}
+
+.glass-card {
+    background: rgba(40, 5, 25, 0.8);
+    backdrop-filter: blur(20px);
+    border-radius: 20px;
+    padding: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.card {
+    width: 32%;
+    height: 180px;
+    border-radius: 15px;
+    overflow: hidden;
+    position: relative;
+    cursor: pointer;
+}
+
+.card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: 0.5s;
+}
+
+.card:hover img {
+    transform: scale(1.1);
+}
+
+.play-badge {
+    position: absolute;
+    bottom: 15px;
+    right: 15px;
+    background: rgba(0, 0, 0, 0.6);
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+/* Responsive */
+@media (max-width: 1100px) {
+    .main-container { padding: 0 30px; }
+    .hero-image-wrapper { width: 40%; right: 0; }
+    .large-logo { width: 300px; }
+    .side-scroll, .social-icons { display: none; }
+}
+    </style>
+</head>
+<body>
+
+    <div class="main-container">
+        <header class="navbar flex-between">
+            <div class="logo">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/0/08/Squid_Game_logo.svg" alt="Squid Game" width="120">
+            </div>
+            <nav class="nav-links">
+                <a href="#">About</a>
+                <a href="#" class="active">Watch now</a>
+                <a href="#">Actors</a>
+                <a href="#">Contact</a>
+            </nav>
+            <div class="menu-icon">
+                <i class="ri-menu-4-line"></i>
+            </div>
+        </header>
+
+        <section class="hero flex-between">
+            <div class="hero-content">
+                <div class="main-title">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/0/08/Squid_Game_logo.svg" alt="Squid Game Logo" class="large-logo">
+                    <span class="sparkle">✦</span>
+                </div>
+                <p class="meta-info">Action / Thriller / Drama Series directed by Dong-hyuk Hwang</p>
+                <p class="meta-info">Season 1: 9 Episodes</p>
+
+                <div class="cta-btns flex">
+                    <button class="btn btn-filled">
+                        <i class="ri-play-circle-fill"></i> Play Now
+                    </button>
+                    <button class="btn btn-outline">
+                        <i class="ri-play-line"></i> Watch Trailer
+                    </button>
+                </div>
+            </div>
+
+            <div class="hero-image-wrapper">
+                <img src="https://i.ibb.co/L50H8T3/squid-guard.png" alt="Guard" class="guard-img">
+                </div>
+
+            <div class="side-scroll">
+                <span>SCROLL</span>
+                <div class="line"></div>
+            </div>
+
+            <div class="social-icons">
+                <a href="#"><i class="ri-twitter-line"></i></a>
+                <a href="#"><i class="ri-instagram-line"></i></a>
+                <a href="#"><i class="ri-facebook-fill"></i></a>
+            </div>
+        </section>
+
+        <section class="bottom-featured">
+            <div class="glass-card flex-between">
+                <div class="card">
+                    <img src="https://images.unsplash.com/photo-1635805737707-575885ab0820?auto=format&fit=crop&q=80&w=400" alt="Card 1">
+                    <div class="play-badge"><i class="ri-play-fill"></i></div>
+                </div>
+                <div class="card">
+                    <img src="https://images.unsplash.com/photo-1635447400331-5079a4a796e6?auto=format&fit=crop&q=80&w=400" alt="Card 2">
+                    <div class="play-badge"><i class="ri-play-fill"></i></div>
+                </div>
+                <div class="card">
+                    <img src="https://images.unsplash.com/photo-1635447400300-8f9215099307?auto=format&fit=crop&q=80&w=400" alt="Card 3">
+                    <div class="play-badge"><i class="ri-play-fill"></i></div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+</body>
+</html>

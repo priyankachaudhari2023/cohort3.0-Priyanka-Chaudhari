@@ -1,0 +1,172 @@
+:root {
+    --bg-black: #000000;
+    --card-dark: #0d0d0d;
+    --accent-orange: #ff4d00;
+    --gray-text: #8c8c8c;
+    --white: #ffffff;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--bg-black);
+    color: var(--white);
+    font-family: 'Inter', sans-serif;
+    line-height: 1.6;
+    padding: 0 40px;
+}
+
+/* Navigation */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 25px 0;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: 800;
+    font-size: 1.1rem;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 25px;
+}
+
+.nav-links a {
+    color: var(--white);
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: 0.3s;
+}
+
+.nav-links a:hover, .active-link {
+     color: var(--gray-text);
+}
+
+.btn-get-started {    
+    color: var(--white);
+    padding: 10px 22px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.85rem;
+    transition: 0.3s;
+}
+.btn-get-started:hover {
+background: #f0f0f0;  color: black;
+}
+/* Hero Section */
+.hero {
+    text-align: center;
+    padding: 50px 0;
+}
+
+.hero h1 {
+    font-size: clamp(3rem, 12vw, 7.5rem);
+    font-weight: 800;
+    letter-spacing: -2px;
+    margin-bottom: 30px;
+}
+
+/* Filters with Flexbox */
+.filter-container {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 50px;
+}
+
+.filter-btn {
+    background: #1a1a1a;
+    color: var(--white);
+    border: none;
+    padding: 10px 22px;
+    border-radius: 30px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: 0.3s;
+}
+
+.filter-btn.active {
+    background: var(--accent-orange);
+    color: white;
+}
+
+/* Main Blog Section with Flexbox */
+.blog-container {
+    display: flex;
+    flex-wrap: wrap; /* कार्ड्स को अगली लाइन में भेजने के लिए */
+    justify-content: center; /* कार्ड्स को बीच में रखने के लिए */
+    gap: 24px;
+    padding-bottom: 80px;
+}
+
+.blog-card {
+    background: var(--card-dark);
+    border-radius: 20px;
+    overflow: hidden;
+    flex: 1 1 300px; /* Grow, Shrink, Basis */
+    max-width: calc(33.333% - 16px); /* 3 कार्ड्स एक लाइन में */
+    display: flex;
+    flex-direction: column;
+}
+
+.card-img-wrapper img {
+    width: 100%;
+    height: 320px;
+    object-fit: cover;
+}
+
+.card-info {
+    padding: 25px;
+}
+
+.tag {
+    color: var(--accent-orange);
+    font-weight: 600;
+    font-size: 0.8rem;
+    display: block;
+    margin-bottom: 12px;
+    background: rgb(84 29 9 / 90%);
+    width: fit-content;
+    padding: 6px 15px;
+    border-radius: 20px;
+}
+
+.blog-card h3 {
+    font-size: 1.35rem;
+    margin-bottom: 12px;
+    line-height: 1.3;
+}
+
+.date {
+    color: #555;
+    font-size: 0.8rem;
+}
+
+/* Responsiveness */
+@media (max-width: 1100px) {
+    .blog-card {
+        max-width: calc(50% - 12px); /* टैबलेट पर 2 कार्ड */
+    }
+}
+
+@media (max-width: 768px) {
+    .nav-links, .btn-get-started { display: none; } /* मोबाइल पर नेव छुपाएं */
+    
+    .blog-card {
+        max-width: 100%; /* मोबाइल पर 1 कार्ड */
+    }
+    
+    body { padding: 0 20px; }
+}

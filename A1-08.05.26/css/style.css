@@ -1,0 +1,120 @@
+*{ margin: 0;    padding: 0;    box-sizing: border-box; font-family: 'Montserrat', sans-serif; color: #000;}
+html,body { width: 100%; height: 100%;}
+nav {
+    width: 100%;
+    padding: 30px 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+a.nav-left {
+    width: 8%;
+}
+nav .nav-left img{
+    width: 100%;
+}
+nav .nav-right { font-size: 35px; cursor: pointer; }
+.left p:first-child {
+  text-transform: uppercase;
+    letter-spacing: 4px;
+    font-weight: 700;
+    font-size: 13px;
+}
+h1 {
+    text-transform: capitalize;
+    font-size: 90px;
+        font-weight: 700;
+}
+.left .para {
+        font-size: 14px;
+    color: #000000b3;
+    font-weight: 500;
+    line-height: 20px;
+}
+
+.left .border {
+    width: 11.2%;
+    height: 2px;
+    background: #000;
+}
+.page-number {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+.page-number span{ 
+    font-weight: 700;
+}
+.page-number span small {
+    font-weight: 400;
+}
+.left , .right { 
+    display: flex;
+    flex-direction: column;
+}
+.right div {
+        width:10px;
+    height:10px;
+    background: #fbc40f;
+    border-radius: 10px;
+    cursor: pointer;
+}
+.left { 
+    gap: 25px;
+}
+.right {
+    gap: 15px;
+}
+.right .active {
+      background: #000;
+       width:12px;
+    height:12px;
+}
+.content-main {
+   position: absolute;
+    width: 100%;
+    height: 100vh;
+    top: 0;
+    z-index: -9;
+}
+.pikachu-img {
+ position: absolute;
+    top: 23%;
+    right: 10%;
+    width: 40%;
+    transform: translate(-12%, -10%);
+}
+.pikachu-img  img {
+    width: 100%;
+}
+/* new div css */
+.contentMain {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    position: absolute;
+    top: 0;
+    z-index: -1;
+}
+.cm-left {
+    background: #fcc60c;
+    width: 60%;
+    height: 100%;
+        display: flex;
+    align-items: center;
+    padding-left: 100px;
+}
+.cm-right {
+    background: #fbe8b3;
+    width: 40%;
+    height: 100%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding-right: 100px;
+}
+main {
+    position: relative;
+    height: 100%;
+    z-index: 9;
+}
